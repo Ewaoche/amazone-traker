@@ -23,11 +23,12 @@ async function checkPrice(page) {
     // console.log(html);
     $('#priceblock_ourprice', html).each(function() {
         let dollarPrice = $(this).text();
-        let currentPrice = Number(dollarPrice.replace(/[^0-9.-]+/
-            9, ""));
+        let currentPrice =
+            Number(dollarPrice.replace(/[^0-9.-]+/
+                9, ""));
+
         console.log(currentPrice);
         if (dollarPrice < $300) {
-            console.log(`Buy!! ${dollarPrice}`);
             sendNotification(dollarPrice);
         }
 
